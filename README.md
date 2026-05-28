@@ -50,6 +50,8 @@ Name capture on first interaction
 Stateful processing with greeting and input handling
 Session-based memory tracking
 Decoupled from persistence for testability
+
+
 3. KeywordResponder.cs
 Maps topic keywords to randomized response lists.
 
@@ -70,6 +72,8 @@ Key Methods:
 TryGetResponse(string input) - Returns matching topic and random response
 GetRandomResponseForKey(string key) - Retrieves additional responses for a topic
 GetAllKeywords() - Lists all available topics
+
+
 4. SentimentDetector.cs
 Naive token-based sentiment analysis for adaptive chatbot tone.
 
@@ -88,4 +92,16 @@ Frustrated: "frustrated", "don't understand", "overwhelmed"
 Confident: "I know", "I understand", "got it"
 Happy: "great", "thanks", "awesome"
 
-      
+
+5. MemoryStore.cs
+In-memory key-value store for session state persistence.
+
+Stored Values:
+
+UserName - User's display name
+FavouriteTopic - User's preferred cybersecurity topic
+Methods:
+
+Store(string key, string? value) - Save or remove a value
+Get(string key) - Retrieve a value
+GetPersonalisedOpener() - Generate context-aware greetings
