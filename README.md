@@ -39,13 +39,9 @@ The original console-based chatbot preserved for compatibility and reference.
 - Returning user detection with personalized greetings
 - Support for multiple questions in a single input
 - Typed response simulation with character delays
+- **Usage:**
 
-**Usage:**
-```csharp
-var chatbot = new Chatbot("YourName");
-      chatbot.Start();
-
-      2. ChatBotCore.cs (UI Implementation)
+2. ChatBotCore.cs (UI Implementation)
 Lightweight, UI-focused chatbot implementation used by the WPF frontend.
 
 Key Features:
@@ -54,10 +50,42 @@ Name capture on first interaction
 Stateful processing with greeting and input handling
 Session-based memory tracking
 Decoupled from persistence for testability
-Usage:
+3. KeywordResponder.cs
+Maps topic keywords to randomized response lists.
 
-C#
-var core = new ChatBotCore();
-string greeting = core.GetGreeting();
-string response = core.ProcessInput(userInput);
-var memory = core.GetMemory();
+Supported Topics:
+
+Phishing
+Password management
+Malware
+Encryption
+Privacy
+Ransomware
+Scams
+Two-factor authentication
+DDoS attacks
+Safe browsing
+Key Methods:
+
+TryGetResponse(string input) - Returns matching topic and random response
+GetRandomResponseForKey(string key) - Retrieves additional responses for a topic
+GetAllKeywords() - Lists all available topics
+4. SentimentDetector.cs
+Naive token-based sentiment analysis for adaptive chatbot tone.
+
+Supported Sentiments:
+
+Worried: Concerned/scared language triggers supportive responses
+Curious: Inquisitive language receives educational openers
+Frustrated: Overwhelmed language gets simplified explanations
+Confident: Knowledgeable language receives advanced tips
+Happy: Positive language gets encouraging follow-ups
+Trigger Examples:
+
+Worried: "worried", "scared", "unsafe"
+Curious: "curious", "wonder", "how does"
+Frustrated: "frustrated", "don't understand", "overwhelmed"
+Confident: "I know", "I understand", "got it"
+Happy: "great", "thanks", "awesome"
+
+      
