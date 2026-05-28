@@ -43,4 +43,21 @@ The original console-based chatbot preserved for compatibility and reference.
 **Usage:**
 ```csharp
 var chatbot = new Chatbot("YourName");
-chatbot.Start();
+      chatbot.Start();
+
+      2. ChatBotCore.cs (UI Implementation)
+Lightweight, UI-focused chatbot implementation used by the WPF frontend.
+
+Key Features:
+
+Name capture on first interaction
+Stateful processing with greeting and input handling
+Session-based memory tracking
+Decoupled from persistence for testability
+Usage:
+
+C#
+var core = new ChatBotCore();
+string greeting = core.GetGreeting();
+string response = core.ProcessInput(userInput);
+var memory = core.GetMemory();
