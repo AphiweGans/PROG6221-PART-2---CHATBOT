@@ -154,7 +154,7 @@ WPF framework (for UI mode)
 
 SCREENSHOTS:
 
-HOME PAGE - ENTER YOUR PAGE
+HOME PAGE - ENTER YOUR NAMEPAGE
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/28af7aed-e4ce-467f-8d56-d4abc5eca9cd" />
 
